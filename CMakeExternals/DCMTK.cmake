@@ -28,7 +28,7 @@ if(DEFINED DCMTK_DIR AND NOT EXISTS ${DCMTK_DIR})
 endif()
 
 if(NOT DEFINED DCMTK_DIR AND NOT ${CMAKE_PROJECT_NAME}_USE_SYSTEM_${proj})
-  set(revision_tag "0f9bf4d9e9a778c11fdddafca691b451c2b621bc") # patched-DCMTK-3.6.6_20210115
+  set(revision_tag "DCMTK-3.6.6") # patched-DCMTK-3.6.6_20210115
   if(${proj}_REVISION_TAG)
     set(revision_tag ${${proj}_REVISION_TAG})
   endif()
@@ -40,7 +40,7 @@ if(NOT DEFINED DCMTK_DIR AND NOT ${CMAKE_PROJECT_NAME}_USE_SYSTEM_${proj})
     set(location_args GIT_REPOSITORY ${${proj}_GIT_REPOSITORY}
                       GIT_TAG ${revision_tag})
   else()
-    set(location_args GIT_REPOSITORY "${EP_GIT_PROTOCOL}://github.com/commontk/DCMTK.git"
+    set(location_args GIT_REPOSITORY "${EP_GIT_PROTOCOL}://git.dcmtk.org/dcmtk"
                       GIT_TAG ${revision_tag})
   endif()
 
